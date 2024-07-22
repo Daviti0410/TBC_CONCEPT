@@ -1,3 +1,7 @@
+body {
+  background-color: #f9fafa;
+}
+
 .page-wrapper {
   color: rgb(85, 95, 98);
   display: flex;
@@ -336,17 +340,15 @@ p {
   background-color: #004494;
 }
 .main {
-  margin-left: 13%;
   margin-top: 10px;
   margin-bottom: 40px;
 }
 
 .paragraph {
+  margin-top: 40px;
   font-weight: 500px;
   font-size: xx-large;
   line-height: 1.5;
-  width: 75%;
-  margin-left: 13%;
   color: black;
 }
 .choose1 {
@@ -356,69 +358,147 @@ p {
   line-height: 1.5;
   margin-top: 8%;
 }
-.three-pictures {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+.grid-container {
+  display: grid;
+  grid-template-rows: 250px 250px;
+  grid-template-columns: 540px 530px;
+  gap: 2em;
 }
 
-.left-side,
-.right-side {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.item3 {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  grid-row-end: 3;
+  grid-column-end: 2;
 }
 
-.left-side {
-  flex: 2;
-}
-
-.right-side {
-  flex: 4;
-  max-width: 90%;
-  margin-right: 14%;
-}
-
-.image-container {
+.grid-item {
   position: relative;
-  width: 100%;
+  overflow: hidden;
+  border-radius: 7px;
 }
 
-.image-container img {
+.grid-item img {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
+  height: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+  transform-origin: center;
 }
 
-.overlay {
+.grid-item:hover img {
+  transform: scale(1.05);
+}
+
+.overlay-text {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
-  height: 98%;
-  width: 100%;
-  opacity: 0;
-  border-radius: 10px;
-  opacity: 1;
-  background-color: rgba(33, 33, 33, 0.5);
-}
-.left {
-  height: 97%;
-}
-.banner-text {
+  bottom: 0;
   color: white;
-  font-size: 20px;
+  background-color: rgba(37, 37, 37, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 35px;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
   font-weight: bold;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+}
+.overlay-text a {
+  text-decoration: underline;
+}
+.overlay-text a:hover {
+  color: rgb(175, 175, 175);
+  text-decoration: none;
+}
+.counter {
+  display: flex;
+  gap: 3em;
+  justify-content: space-between;
+  margin-top: 130px;
+}
+.counter1,
+.counter2,
+.counter3 {
+  background-color: white;
+  width: 100%;
+  height: 160px;
+  border-radius: 7px;
+  padding-top: 10px;
+}
+.counter1 h1,
+.counter2 h1,
+.counter3 h1 {
+  color: black;
+  font-size: 45px;
+}
+.counter1 p,
+.counter2 p,
+.counter3 p {
+  color: rgb(85, 95, 98);
   text-align: center;
 }
+.header2 {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+.choose2 {
+  margin-top: 20px;
+}
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* Ensures slides outside of slider viewport are not shown */
+}
 
-.text span {
-  display: block;
-  font-size: 16px;
-  font-weight: normal;
+.slides {
+  display: flex;
+  transition: transform 0.5s ease; /* Smooth transition for sliding effect */
+}
+
+.slide {
+  min-width: 100%; /* Each slide takes full width of the slider */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: auto;
+}
+
+.slide span {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+}
+
+button.prev,
+button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background-color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 100;
+}
+
+button.prev {
+  left: 10px;
+}
+button.next {
+  right: 10px;
 }
