@@ -343,7 +343,7 @@ p {
 
 .paragraph {
   font-weight: 500px;
-  font-size: 32px;
+  font-size: xx-large;
   line-height: 1.5;
   width: 75%;
   margin-left: 13%;
@@ -355,21 +355,70 @@ p {
   font-weight: 700px;
   line-height: 1.5;
   margin-top: 8%;
-  margin-left: 13%;
 }
 .three-pictures {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  padding: 20px;
+  gap: 20px;
 }
-.inner-left-side1 img {
-  width: 500px;
+
+.left-side,
+.right-side {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
-.inner-left-side2 {
-  width: 400px;
+
+.left-side {
+  flex: 2;
 }
-.right-side img {
-  max-width: 300px;
+
+.right-side {
+  flex: 4;
+  max-width: 90%;
+  margin-right: 14%;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+.image-container img {
+  width: 100%;
   height: auto;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 98%;
+  width: 100%;
+  opacity: 0;
+  border-radius: 10px;
+  opacity: 1;
+  background-color: rgba(33, 33, 33, 0.5);
+}
+.left {
+  height: 97%;
+}
+.banner-text {
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text span {
+  display: block;
+  font-size: 16px;
+  font-weight: normal;
 }
