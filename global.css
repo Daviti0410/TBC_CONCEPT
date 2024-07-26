@@ -4,8 +4,6 @@ body {
 
 .page-wrapper {
   color: rgb(85, 95, 98);
-  display: flex;
-  flex-direction: column;
   font-family: TBCX, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -20,7 +18,6 @@ body {
 
 .default-layout {
   color: rgb(85, 95, 98);
-  display: block;
   font-family: TBCX, sans-serif;
   font-size: 14px;
   font-weight: 400;
@@ -53,7 +50,6 @@ body {
 
 .logo-header {
   align-items: center;
-  box-sizing: border-box;
   color: rgb(85, 95, 98);
   cursor: pointer;
   display: flex;
@@ -143,9 +139,10 @@ body {
 }
 
 .mega-box {
-  margin-top: 30px;
+  margin-top: 27px;
   position: absolute;
   width: 100%;
+  border-top: #e7e6e6 1px solid;
   left: 0;
   background-color: white;
   visibility: hidden;
@@ -156,8 +153,14 @@ body {
   display: flex;
   width: 100%;
 }
+.mega-links {
+  border-top: #004494 1px solid;
+  margin-top: -25px;
+}
 .mega-links li {
   padding-top: 20px;
+  font-size: medium;
+  font-weight: bold;
 }
 .mega-links a:link,
 .mega-links a:visited {
@@ -170,7 +173,10 @@ body {
 }
 
 .text {
-  color: blue;
+  font-weight: bold;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: rgb(4, 4, 172);
 }
 .text:hover {
   color: rgb(132, 132, 248);
@@ -273,7 +279,7 @@ body {
 }
 
 .banner-content {
-  min-height: 150px;
+  min-height: 100px;
   display: flex;
   flex-direction: column;
   padding: 30px 95px 6px;
@@ -306,7 +312,7 @@ body {
 
 .image-wrapper img {
   width: 100%;
-  height: auto;
+  height: 350px;
   display: block;
 }
 
@@ -345,7 +351,7 @@ p {
 }
 
 .paragraph {
-  margin-top: 40px;
+  margin-top: 100px;
   font-weight: 500px;
   font-size: xx-large;
   line-height: 1.5;
@@ -450,55 +456,379 @@ p {
 .choose2 {
   margin-top: 20px;
 }
-.slider {
+
+.slider-container {
   position: relative;
-  width: 100%;
-  overflow: hidden; /* Ensures slides outside of slider viewport are not shown */
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
 }
 
-.slides {
+.slider-wrapper {
   display: flex;
-  transition: transform 0.5s ease; /* Smooth transition for sliding effect */
+  transition: transform 0.5s ease;
+}
+
+.image-list {
+  display: flex;
+  width: 95%;
+  margin-bottom: 30px;
 }
 
 .slide {
-  min-width: 100%; /* Each slide takes full width of the slider */
+  flex: 0 0 calc(100% / 3);
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin: 0 10px;
+  border-style: solid;
+  border-radius: 5%;
+  border-width: 1px;
+  border-color: grey;
   position: relative;
+}
+
+.image-container {
+  position: relative;
+  height: 100%;
 }
 
 .slide img {
   width: 100%;
   height: auto;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
 }
 
-.slide span {
+.small-image {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  padding: 10px;
+  top: 20px;
+  right: 0;
+  width: 70px;
+  height: 50px;
+  z-index: 2;
+  background-color: white;
 }
 
-button.prev,
-button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+.slide a:link {
+  text-decoration: none;
+}
+
+.caption {
+  padding: 20px;
+}
+
+.slide:hover img {
+  transform: scale(1.01);
+}
+
+.slide:hover {
+  background-color: white;
+}
+
+.caption h3 {
+  margin: 10px 0;
+  font-size: 1.5em;
+  text-align: start;
+  color: black;
+  font-size: medium;
+  text-decoration: none;
+}
+
+.caption p {
+  margin: 10px 0;
+  color: rgb(85, 95, 98);
+  font-size: small;
+  font-weight: bold;
+}
+
+.prev,
+.next {
+  position: relative;
+  background-color: rgb(249, 249, 249);
   border: none;
-  background-color: #fff;
+  color: blue;
+  font-size: 2em;
   padding: 10px;
   cursor: pointer;
-  z-index: 100;
+  gap: 20px;
 }
 
-button.prev {
-  left: 10px;
+.prev:hover,
+.next:hover {
+  color: rgb(155, 155, 251);
 }
-button.next {
-  right: 10px;
+
+.slider-container .slider-scrollbar {
+  height: 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.slider-scrollbar .scrollbar-track {
+  height: 2px;
+  width: 100%;
+  background-color: #ccc;
+  position: relative;
+  border-radius: 4px;
+}
+
+.slider-scrollbar:hover .scrollbar-track {
+  height: 4px;
+}
+
+.slider-scrollbar .scrollbar-thumb {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(68, 68, 220);
+  border-radius: inherit;
+  cursor: grab;
+  transition: transform 0.5s ease;
+}
+
+.slider-scrollbar .scrollbar-thumb:active {
+  cursor: grabbing;
+  height: 8px;
+  top: -2px;
+}
+
+.slider-scrollbar .scrollbar-thumb::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -10px;
+  bottom: -10px;
+}
+.app-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #fff;
+  margin: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.content {
+  width: 60%;
+}
+
+.content h2 {
+  color: #333;
+  font-size: 24px;
+}
+
+.content p {
+  color: #666;
+  font-size: 16px;
+  margin: 10px 0 20px;
+}
+
+.app-links a {
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.app-links img {
+  width: 100px;
+  height: auto;
+}
+
+.side-image {
+  width: 30%;
+  height: auto;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.card {
+  width: 30%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 100px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.info {
+  padding: 15px;
+  background-color: #f9f9f9;
+  text-align: left;
+}
+
+.info h2 {
+  margin-top: 0;
+}
+
+.info p {
+  color: #666;
+  font-size: medium;
+}
+.banner2 {
+  margin-bottom: 150px;
+}
+.second-slider .slide img {
+  position: relative;
+  top: 20px;
+  left: -80px;
+  width: 150px;
+  height: 50px;
+}
+.second-slider .slide {
+  background-color: white;
+  border: none;
+}
+.second-slider .slide:hover img {
+  transform: none;
+}
+
+.second-slider .slide:hover {
+  box-shadow: 4px 4px 4px;
+  transition: all 1s ease-out;
+}
+.footer {
+  background-color: white;
+  padding: 20px 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-top .change-language {
+  width: 70px;
+  height: 30px;
+}
+
+.main-footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.main-footer-content {
+  display: flex;
+  flex-direction: column;
+}
+.main-footer-content img {
+  width: 30px;
+  cursor: pointer;
+}
+.main-footer-content a {
+  font-size: large;
+  margin-top: 25px;
+  cursor: pointer;
+}
+.main-footer-content a:hover {
+  color: #0056b3;
+}
+.main-footer-content h2 {
+  cursor: pointer;
+}
+.content1 h2 {
+  cursor: text;
+}
+.content1 a:hover {
+  text-decoration: underline;
+  color: #666;
+}
+.footer-bottom {
+  border-top: #d7d7d7 1px solid;
+}
+.footer-bottom-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.footer-bottom-content p {
+  color: black;
+  font-size: small;
+  margin-right: 150px;
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  unicode-bidi: isolate;
+}
+.footer-logo {
+  display: flex;
+  height: 20px;
+}
+.footer-logo svg {
+  margin-top: 7px;
+  margin-right: 10px;
+}
+.footer-bottom-right span {
+  padding-top: 20px;
+  margin-right: 25px;
+}
+
+.sticky-menu {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.menu-items {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.sticky-menu a {
+  background-color: rgb(69, 69, 69);
+  border-radius: 50%;
+  width: 25px;
+  padding: 10px;
+  text-decoration: none;
+  color: #f4f2f2;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+.sticky-menu a:hover {
+  background-color: #a4a4a4;
+}
+
+.menu-toggle {
+  font-size: 24px;
 }
