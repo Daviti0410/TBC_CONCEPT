@@ -18,7 +18,6 @@ function toggleDropdown(id) {
     dropdown.style.visibility = "hidden";
   }
 }
-
 window.onclick = function (event) {
   if (!event.target.matches(".nav-links a")) {
     const allDropdowns = document.querySelectorAll(".mega-box");
@@ -28,94 +27,43 @@ window.onclick = function (event) {
   }
 };
 
-let currentIndex = 0;
+let isDown = false;
+let startX;
+let scrollLeft;
+const slider = document.querySelector(".image-list");
 
-const slides = document.querySelectorAll(".first-sldier .slide");
-const sliderWrapper = document.querySelector(".slider-wrapper");
-const scrollbarThumb = document.querySelector(".scrollbar-thumb");
-const totalSlides = slides.length;
-const visibleSlides = 3;
+const end = () => {
+  isDown = false;
+  slider.classList.remove("active");
+};
 
-document.querySelector(".next").addEventListener("click", () => {
-  if (currentIndex < totalSlides - visibleSlides) {
-    currentIndex++;
-  } else {
-    currentIndex = 0;
-  }
-  updateSlider();
-  updateScrollbar();
-});
+const start = (e) => {
+  isDown = true;
+  slider.classList.add("active");
+  startX = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+  scrollLeft = slider.scrollLeft;
+};
 
-document.querySelector(".prev").addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    currentIndex = totalSlides - visibleSlides;
-  }
+const move = (e) => {
+  if (!isDown) return;
 
-  updateSlider();
-  updateScrollbar();
-});
+  e.preventDefault();
+  const x = e.pageX || e.touches[0].pageX - slider.offsetLeft;
+  const dist = x - startX;
+  slider.scrollLeft = scrollLeft - dist;
+};
 
-function updateSlider() {
-  const offset = -currentIndex * (100 / visibleSlides);
-  sliderWrapper.style.transform = `translateX(${offset}%)`;
-}
+(() => {
+  slider.addEventListener("mousedown", start);
+  slider.addEventListener("touchstart", start);
 
-function updateScrollbar() {
-  const thumbWidth = 100 / 2.3;
-  const thumbPosition = currentIndex * thumbWidth;
-  scrollbarThumb.style.width = `${thumbWidth}%`;
-  scrollbarThumb.style.transform = `translateX(${thumbPosition}%)`;
-}
+  slider.addEventListener("mousemove", move);
+  slider.addEventListener("touchmove", move);
 
-updateScrollbar();
-
-let secondCurrentIndex = 0;
-
-const secondSlides = document.querySelectorAll(".second-slider .slide");
-const secondSliderWrapper = document.querySelector(
-  ".second-slider .slider-wrapper"
-);
-const secondScrollbarThumb = document.querySelector(
-  ".second-slider .scrollbar-thumb"
-);
-const secondTotalSlides = secondSlides.length;
-const secondVisibleSlides = 3;
-
-document.querySelector(".second-next").addEventListener("click", () => {
-  if (secondCurrentIndex < secondTotalSlides - secondVisibleSlides) {
-    secondCurrentIndex++;
-  } else {
-    secondCurrentIndex = 0;
-  }
-  updateSecondSlider();
-  updateSecondScrollbar();
-});
-
-document.querySelector(".second-prev").addEventListener("click", () => {
-  if (secondCurrentIndex > 0) {
-    secondCurrentIndex--;
-  } else {
-    secondCurrentIndex = secondTotalSlides - secondVisibleSlides;
-  }
-  updateSecondSlider();
-  updateSecondScrollbar();
-});
-
-function updateSecondSlider() {
-  const offset = -secondCurrentIndex * (100 / secondVisibleSlides);
-  secondSliderWrapper.style.transform = `translateX(${offset}%)`;
-}
-
-function updateSecondScrollbar() {
-  const thumbWidth = 100 / 1.5;
-  const thumbPosition = secondCurrentIndex * thumbWidth;
-  secondScrollbarThumb.style.width = `${thumbWidth}%`;
-  secondScrollbarThumb.style.transform = `translateX(${thumbPosition}%)`;
-}
-
-updateSecondScrollbar();
+  slider.addEventListener("mouseleave", end);
+  slider.addEventListener("mouseup", end);
+  slider.addEventListener("touchend", end);
+})();
 
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
@@ -132,3 +80,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+function showSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const burgerbar = document.querySelector(".burger-menu");
+  const close = document.querySelector(".close");
+  sidebar.style.display = "flex";
+  burgerbar.style.display = "none";
+  close.style.display = "flex";
+}
+function hideSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const burgerbar = document.querySelector(".burger-menu");
+  const close = document.querySelector(".close");
+  sidebar.style.display = "none";
+  burgerbar.style.display = "flex";
+  close.style.display = "none";
+}
+function checkScreenWidth() {
+  const burgerMenu = document.querySelector(".burger-menu");
+  if (window.innerWidth > 800) {
+    burgerMenu.style.display = "none";
+  } else {
+    burgerMenu.style.display = "block";
+  }
+}
+
+checkScreenWidth();
+
+window.addEventListener("resize", checkScreenWidth);

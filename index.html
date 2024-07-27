@@ -159,6 +159,32 @@
                   ><span class="arrow">→</span> გამოიწერეთ ნაკრები
                 </a>
               </div>
+              <div class="burger-menu" onclick="showSidebar()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#000"
+                >
+                  <path
+                    d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+                  />
+                </svg>
+              </div>
+              <div class="close" onclick="hideSidebar()">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                  fill="#000"
+                >
+                  <path
+                    d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+                  />
+                </svg>
+              </div>
               <div class="change-language">
                 <div href="#" class="language-icon">
                   <svg
@@ -177,7 +203,79 @@
             </div>
           </div>
         </header>
-
+        <nav>
+          <ul class="sidebar">
+            <li>
+              <select class="a2" href="#">
+                <option>პროდუქტები</option>
+                <option>პტოდუქტების მიმოხილვა</option>
+                <option>ნაკრები</option>
+                <option>პირადი ნაკრები</option>
+              </select>
+            </li>
+            <li>
+              <select class="a2" href="#">
+                <option>შეთავაზებები</option>
+                <option>მიმოხილვა</option>
+                <option>შეთავაზებები</option>
+                <option>ღონისძიებები</option>
+              </select>
+            </li>
+            <li>
+              <select class="a2" href="#">
+                შესახებ
+                <option>კონცეპტის სივრცე</option>
+                <option>მიმოხილვა</option>
+                <option>კაფე</option>
+                <option>ბიბლიოთეკა</option>
+                <option>კონცეპტ ფილიალები</option>
+              </select>
+            </li>
+            <div class="main-footer-content content1-2">
+              <h2>დაგვიკავშირდით:</h2>
+              <a>+995322272700</a>
+              <a>Info@tbcconcept.ge</a>
+              <a>ფილიალები</a>
+              <h2>სოციალური ქსელები</h2>
+              <div class="icons">
+                <a
+                  ><img src="./pictures/facebok-icon.png" alt="facebook icon"
+                /></a>
+                <a>
+                  <img src="./pictures/instagram-icon.png" alt="instagram icon"
+                /></a>
+              </div>
+            </div>
+            <div class="footer-bottom2">
+              <div class="footer-bottom-container">
+                <div class="footer-bottom-content"></div>
+                <div class="footer-bottom-right">
+                  <span>კონფიდენციალურობა</span>
+                  <span>წესები და პირობები</span>
+                </div>
+                <div class="footer-logo">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewbox="0 0 36 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.8154 18.4806C15.8263 18.5838 15.8325 18.7025 15.8325 18.8227C15.8325 19.8184 15.4065 20.7155 14.7261 21.3474L14.7246 21.349C11.2681 24.5334 7.20468 27.1305 2.73238 28.9447L2.4671 29.0402C2.09727 29.1913 1.66502 29.3099 1.21717 29.3747L1.18752 29.3778C1.1251 29.3916 1.05332 29.3993 0.979974 29.3993C0.438492 29.3993 0 28.9662 0 28.4314C0 28.4114 0 28.3898 0.00156047 28.3697V28.3728C0.0187256 28.154 0.0639792 27.949 0.13264 27.7578L0.127958 27.7748C1.32952 24.3946 5.39922 17.0533 7.15475 14.0277C9.33784 10.2375 15.0632 1.11901 15.9168 0.118682C15.973 0.0462399 16.0588 0 16.1571 0C16.2055 0 16.2523 0.0107893 16.2929 0.0323679L16.2913 0.0308266C16.4333 0.0986452 16.5503 0.186501 16.4068 0.692058C15.6577 3.39401 14.5717 9.27881 15.6952 17.3246C15.7529 17.7407 15.8169 18.1214 15.8169 18.4806H15.8154Z"
+                    ></path>
+                    <path
+                      d="M17.2182 22.3447C17.78 21.9501 18.4807 21.7143 19.2375 21.7143C19.6104 21.7143 19.9693 21.7713 20.3064 21.8776L20.2814 21.8715C25.2172 23.3851 29.5022 25.6493 33.2443 28.5639L33.16 28.5007C33.5126 28.7751 33.8216 29.0787 34.09 29.4163L34.0994 29.4271C34.257 29.5997 34.3537 29.8278 34.3537 30.0791C34.3537 30.4552 34.1368 30.7819 33.8201 30.9438L33.8138 30.9468C33.6437 31.0285 33.4455 31.0948 33.238 31.1318L33.224 31.1333C29.6661 31.7992 21.1771 31.9718 17.6567 31.998C13.2437 32.0289 2.39535 31.6913 1.08143 31.4771C0.939428 31.457 0.828635 31.343 0.817711 31.2027V31.2012C0.817711 31.0455 0.817711 30.9037 1.34515 30.7742C4.09157 30.0606 9.77948 28.0461 16.2851 23.0676C16.6175 22.787 16.9171 22.5466 17.2182 22.3431V22.3447Z"
+                    ></path>
+                    <path
+                      d="M19.9178 19.2296C18.9394 18.7734 18.22 17.9134 17.9719 16.873L17.9672 16.8498C17.3212 14.1987 16.9514 11.1562 16.9514 8.02726C16.9514 6.0821 17.0949 4.17085 17.3711 2.30275L17.3446 2.51546C17.4117 2.04381 17.5319 1.61686 17.7004 1.21612L17.6879 1.25002C17.819 0.853902 18.1904 0.571839 18.6273 0.571839C18.827 0.571839 19.0127 0.630409 19.1672 0.730596L19.1641 0.729055C19.3373 0.85082 19.4871 0.986457 19.6198 1.13751L19.6229 1.14059C21.9854 3.85333 26.3813 11.0344 28.1633 14.023C30.3932 17.7823 35.5443 27.2338 35.9766 28.473C35.9906 28.5069 36 28.547 36 28.5886C36 28.6919 35.9469 28.7828 35.8674 28.8383H35.8658C35.7347 28.9262 35.6021 28.9786 35.2338 28.6086C33.2146 26.6188 28.6174 22.7454 21.0055 19.6828C20.6044 19.5271 20.2471 19.3853 19.9194 19.2296H19.9178Z"
+                    ></path>
+                  </svg>
+                  <p>2024 ყველა უფლება დაცულია</p>
+                </div>
+              </div>
+            </div>
+          </ul>
+        </nav>
         <section class="new-section">
           <div class="content-container">
             <div class="container">
@@ -256,111 +354,92 @@
               </div>
               <div class="slider-container first-sldier">
                 <div class="slider-wrapper">
-                  <div class="image-list">
-                    <div class="slide">
-                      <a href="#">
-                        <img
-                          src="./pictures/slider1.png"
-                          alt="Image 1"
-                          class="image-item"
-                        />
-                        <div class="small-image">
-                          <img src="./pictures/slider1-1.jpg" alt="" />
-                        </div>
-                        <div class="caption">
-                          <p>ინვესტიციები</p>
-                          <h3>MP დეველოპმენტი - აშშ და ევროს ობლიგაციები</h3>
-                        </div>
-                      </a>
+                  <div class="image-list image-list1">
+                    <div class="slide slide1">
+                      <img
+                        src="./pictures/slider1.png"
+                        alt="Image 1"
+                        class="image-item"
+                      />
+                      <div class="small-image">
+                        <img src="./pictures/slider1-1.jpg" alt="" />
+                      </div>
+                      <div class="caption">
+                        <p>ინვესტიციები</p>
+                        <h3>MP დეველოპმენტი - აშშ და ევროს ობლიგაციები</h3>
+                      </div>
                     </div>
-                    <div class="slide">
-                      <a href="#">
-                        <img
-                          src="./pictures/slider2.jpg"
-                          alt="Image 2"
-                          class="image-item"
-                        />
-                        <div class="small-image">
-                          <img src="" alt="image2" />
-                        </div>
-                        <div class="caption">
-                          <p>ჯაზ ფესტივალის შეთავაზებები</p>
-                          <h3>IVERIA BEACH - დაიბრუნეთ 30%</h3>
-                        </div>
-                      </a>
+                    <div class="slide slide1">
+                      <img
+                        src="./pictures/slider2.jpg"
+                        alt="Image 2"
+                        class="image-item"
+                      />
+                      <div class="small-image">
+                        <img src="" alt="image2" />
+                      </div>
+                      <div class="caption">
+                        <p>ჯაზ ფესტივალის შეთავაზებები</p>
+                        <h3>IVERIA BEACH - დაიბრუნეთ 30%</h3>
+                      </div>
                     </div>
-                    <div class="slide">
-                      <a href="#">
-                        <img
-                          src="./pictures/sldier3.png"
-                          alt="Image 3"
-                          class="image-item"
-                        />
-                        <div class="small-image">
-                          <img src="./pictures/slider3-3.png" alt="" />
-                        </div>
-                        <div class="caption">
-                          <p>ავტო თეგეტა მოტორსი</p>
-                          <h3>თეგეტა მოტორსი - 50% ფასდაკლება</h3>
-                        </div>
-                      </a>
+                    <div class="slide slide1">
+                      <img
+                        src="./pictures/sldier3.png"
+                        alt="Image 3"
+                        class="image-item"
+                      />
+                      <div class="small-image">
+                        <img src="./pictures/slider3-3.png" alt="" />
+                      </div>
+                      <div class="caption">
+                        <p>ავტო თეგეტა მოტორსი</p>
+                        <h3>თეგეტა მოტორსი - 50% ფასდაკლება</h3>
+                      </div>
                     </div>
-                    <div class="slide">
-                      <a href="#">
-                        <img
-                          src="./pictures/sldier4.png"
-                          alt="Image 4"
-                          class="image-item"
-                        />
-                        <div class="small-image">
-                          <img src="./pictures/slider3-3.png" alt="" />
-                        </div>
-                        <div class="caption">
-                          <p>ავტო თეგეტა მოტორსი</p>
-                          <h3>თეგეტა მოტორსი ბათუმი</h3>
-                        </div>
-                      </a>
+                    <div class="slide slide1">
+                      <img
+                        src="./pictures/sldier4.png"
+                        alt="Image 4"
+                        class="image-item"
+                      />
+                      <div class="small-image">
+                        <img src="./pictures/slider3-3.png" alt="" />
+                      </div>
+                      <div class="caption">
+                        <p>ავტო თეგეტა მოტორსი</p>
+                        <h3>თეგეტა მოტორსი ბათუმი</h3>
+                      </div>
                     </div>
-                    <div class="slide">
-                      <a href="#">
-                        <img
-                          src="./pictures/slider5.png"
-                          alt="Image 5"
-                          class="image-item"
-                        />
-                        <div class="small-image">
-                          <img src="./pictures/slider5-5.png" alt="" />
-                        </div>
-                        <div class="caption">
-                          <p>დასვენება ვიზა</p>
-                          <h3>Le Meridien Batumi – 15%-იანი ფასდაკლება</h3>
-                        </div>
-                      </a>
+                    <div class="slide slide1">
+                      <img
+                        src="./pictures/slider5.png"
+                        alt="Image 5"
+                        class="image-item"
+                      />
+                      <div class="small-image">
+                        <img src="./pictures/slider5-5.png" alt="" />
+                      </div>
+                      <div class="caption">
+                        <p>დასვენება ვიზა</p>
+                        <h3>Le Meridien Batumi – 15%-იანი ფასდაკლება</h3>
+                      </div>
                     </div>
-                    <div class="slide">
-                      <a href="#">
-                        <img
-                          src="./pictures/sldier6.png"
-                          alt="Image 6"
-                          class="image-item"
-                        />
-                        <div class="small-image">
-                          <img src="./pictures/slider6-6.png" alt="" />
-                        </div>
-                        <div class="caption">
-                          <p>დასვენება ვიზა</p>
-                          <h3>Colosseum Marina Hotel – 15%-იანი ფასდაკლება</h3>
-                        </div>
-                      </a>
+                    <div class="slide slide1">
+                      <img
+                        src="./pictures/sldier6.png"
+                        alt="Image 6"
+                        class="image-item"
+                      />
+                      <div class="small-image">
+                        <img src="./pictures/slider6-6.png" alt="" />
+                      </div>
+                      <div class="caption">
+                        <p>დასვენება ვიზა</p>
+                        <h3>Colosseum Marina Hotel – 15%-იანი ფასდაკლება</h3>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="slider-scrollbar">
-                  <div class="scrollbar-track">
-                    <div class="scrollbar-thumb"></div>
-                  </div>
-                  <button class="prev">←</button>
-                  <button class="next">→</button>
                 </div>
               </div>
               <div class="app-section">
@@ -451,7 +530,7 @@
               </div>
               <div class="slider-container second-slider">
                 <div class="slider-wrapper">
-                  <div class="image-list">
+                  <div class="image-list image-list2">
                     <div class="slide">
                       <a href="#">
                         <img
@@ -517,13 +596,6 @@
                       </a>
                     </div>
                   </div>
-                </div>
-                <div class="slider-scrollbar">
-                  <div class="scrollbar-track">
-                    <div class="scrollbar-thumb"></div>
-                  </div>
-                  <button class="prev second-prev">←</button>
-                  <button class="next second-next">→</button>
                 </div>
               </div>
               <div class="sticky-menu">
@@ -599,7 +671,7 @@
                   </div>
                 </a>
               </div>
-              <div class="change-language">
+              <div class="change-language language1">
                 <div href="#" class="language-icon">
                   <svg
                     width="24"
@@ -651,6 +723,51 @@
                 </div>
               </div>
             </div>
+            <div class="main-footer2">
+              <div class="main-footer-container2">
+                <div class="main-footer-content2">
+                  <select>
+                    <option>პროდუქტები</option>
+                    <option>ნაკრები</option>
+                    <option>პერსონალური ბანკირი</option>
+                  </select>
+                </div>
+                <div class="main-footer-content2">
+                  <select>
+                    <option>Lifestyle</option>
+                    <option>შეთავაზებები</option>
+                    <option>ღონისძიებები</option>
+                  </select>
+                </div>
+                <div class="main-footer-content2">
+                  <select>
+                    <option>კონცეპტის სივრცე</option>
+                    <option>ბიბლიოთეკა</option>
+                    <option>კაფე</option>
+                  </select>
+                </div>
+                <div class="main-footer-content content1-2">
+                  <h2>დაგვიკავშირდით:</h2>
+                  <a>+995322272700</a>
+                  <a>Info@tbcconcept.ge</a>
+                  <a>ფილიალები</a>
+                  <h2>სოციალური ქსელები</h2>
+                  <div class="icons">
+                    <a
+                      ><img
+                        src="./pictures/facebok-icon.png"
+                        alt="facebook icon"
+                    /></a>
+                    <a>
+                      <img
+                        src="./pictures/instagram-icon.png"
+                        alt="instagram icon"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div class="footer-bottom">
               <div class="footer-bottom-container">
                 <div class="footer-bottom-content">
@@ -677,6 +794,35 @@
                 <div class="footer-bottom-right">
                   <span>კონფიდენციალურობა</span>
                   <span>წესები და პირობები</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="footer-bottom2">
+              <div class="footer-bottom-container">
+                <div class="footer-bottom-content"></div>
+                <div class="footer-bottom-right">
+                  <span>კონფიდენციალურობა</span>
+                  <span>წესები და პირობები</span>
+                </div>
+                <div class="footer-logo">
+                  <svg
+                    width="30"
+                    height="30"
+                    viewbox="0 0 36 32"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M15.8154 18.4806C15.8263 18.5838 15.8325 18.7025 15.8325 18.8227C15.8325 19.8184 15.4065 20.7155 14.7261 21.3474L14.7246 21.349C11.2681 24.5334 7.20468 27.1305 2.73238 28.9447L2.4671 29.0402C2.09727 29.1913 1.66502 29.3099 1.21717 29.3747L1.18752 29.3778C1.1251 29.3916 1.05332 29.3993 0.979974 29.3993C0.438492 29.3993 0 28.9662 0 28.4314C0 28.4114 0 28.3898 0.00156047 28.3697V28.3728C0.0187256 28.154 0.0639792 27.949 0.13264 27.7578L0.127958 27.7748C1.32952 24.3946 5.39922 17.0533 7.15475 14.0277C9.33784 10.2375 15.0632 1.11901 15.9168 0.118682C15.973 0.0462399 16.0588 0 16.1571 0C16.2055 0 16.2523 0.0107893 16.2929 0.0323679L16.2913 0.0308266C16.4333 0.0986452 16.5503 0.186501 16.4068 0.692058C15.6577 3.39401 14.5717 9.27881 15.6952 17.3246C15.7529 17.7407 15.8169 18.1214 15.8169 18.4806H15.8154Z"
+                    ></path>
+                    <path
+                      d="M17.2182 22.3447C17.78 21.9501 18.4807 21.7143 19.2375 21.7143C19.6104 21.7143 19.9693 21.7713 20.3064 21.8776L20.2814 21.8715C25.2172 23.3851 29.5022 25.6493 33.2443 28.5639L33.16 28.5007C33.5126 28.7751 33.8216 29.0787 34.09 29.4163L34.0994 29.4271C34.257 29.5997 34.3537 29.8278 34.3537 30.0791C34.3537 30.4552 34.1368 30.7819 33.8201 30.9438L33.8138 30.9468C33.6437 31.0285 33.4455 31.0948 33.238 31.1318L33.224 31.1333C29.6661 31.7992 21.1771 31.9718 17.6567 31.998C13.2437 32.0289 2.39535 31.6913 1.08143 31.4771C0.939428 31.457 0.828635 31.343 0.817711 31.2027V31.2012C0.817711 31.0455 0.817711 30.9037 1.34515 30.7742C4.09157 30.0606 9.77948 28.0461 16.2851 23.0676C16.6175 22.787 16.9171 22.5466 17.2182 22.3431V22.3447Z"
+                    ></path>
+                    <path
+                      d="M19.9178 19.2296C18.9394 18.7734 18.22 17.9134 17.9719 16.873L17.9672 16.8498C17.3212 14.1987 16.9514 11.1562 16.9514 8.02726C16.9514 6.0821 17.0949 4.17085 17.3711 2.30275L17.3446 2.51546C17.4117 2.04381 17.5319 1.61686 17.7004 1.21612L17.6879 1.25002C17.819 0.853902 18.1904 0.571839 18.6273 0.571839C18.827 0.571839 19.0127 0.630409 19.1672 0.730596L19.1641 0.729055C19.3373 0.85082 19.4871 0.986457 19.6198 1.13751L19.6229 1.14059C21.9854 3.85333 26.3813 11.0344 28.1633 14.023C30.3932 17.7823 35.5443 27.2338 35.9766 28.473C35.9906 28.5069 36 28.547 36 28.5886C36 28.6919 35.9469 28.7828 35.8674 28.8383H35.8658C35.7347 28.9262 35.6021 28.9786 35.2338 28.6086C33.2146 26.6188 28.6174 22.7454 21.0055 19.6828C20.6044 19.5271 20.2471 19.3853 19.9194 19.2296H19.9178Z"
+                    ></path>
+                  </svg>
+                  <p>2024 ყველა უფლება დაცულია</p>
                 </div>
               </div>
             </div>
