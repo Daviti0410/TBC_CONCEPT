@@ -1,7 +1,7 @@
 # TBC_CONCEPT
 
 
-The project is written in HTML, CSS, and JavaScript, and it includes an images. No external libraries or frameworks were used.
+The project is written in HTML, CSS, and JavaScript, and it includes an image folder. No external libraries or frameworks were used.
 
 Installation
 Clone the repository:
