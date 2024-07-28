@@ -1,3 +1,5 @@
+/*მთავარი გვერდის გასტილვა*/
+
 html,
 body {
   background-color: #f9fafa;
@@ -30,6 +32,8 @@ body {
   width: 100%;
   -webkit-font-smoothing: antialiased;
 }
+
+/*ჰედერის გასტილვა(ლოგო ნავიგაციის ბარი და ა.შ)*/
 
 .header {
   background-color: #fff;
@@ -122,7 +126,7 @@ body {
   z-index: 103;
   -webkit-font-smoothing: antialiased;
 }
-
+/*ჩამოსაშლელი მენიუს გასტილვა*/
 .nav-links {
   width: max-content;
   display: inline-flex;
@@ -190,7 +194,7 @@ body {
 .row3 {
   padding-left: 295px;
 }
-
+/*ნავიგაციის მარჯვენა მხარეს მდგომი(search icon-ის და მის მარჯვნივ მდგომი) ელემენტების გასტილვა*/
 .right-links {
   min-width: 280px;
   display: flex;
@@ -198,7 +202,7 @@ body {
   justify-content: space-between;
   padding-left: 90px;
 }
-
+/*გამოიწერეთ ნაკრების გასტილვა*/
 .blue-link {
   box-sizing: border-box;
   color: rgb(24, 44, 192);
@@ -238,36 +242,6 @@ body {
   background-color: #333;
   transition: transform 0.3s ease;
 }
-
-.mobile-nav {
-  display: none;
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 99;
-}
-.links1 {
-  display: none;
-}
-.mobile-nav .nav-links {
-  list-style: none;
-  padding: 20px;
-  text-align: center;
-}
-
-.mobile-nav .nav-links li {
-  padding: 10px 0;
-}
-
-.mobile-nav .nav-links li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
 .arrow {
   font-size: larger;
   font-weight: bolder;
@@ -304,6 +278,8 @@ body {
   background-color: rgb(224, 222, 222);
   border-radius: 2px;
 }
+
+/*მთავარი კონტენტის გასტილვა*/
 .new-section {
   padding-bottom: 50px;
 }
@@ -503,7 +479,7 @@ p {
 .choose2 {
   margin-top: 20px;
 }
-
+/*პირველი სლაიდერის გასტილვა*/
 .slider-container {
   position: relative;
   max-width: 100%;
@@ -515,6 +491,7 @@ p {
   display: flex;
   transition: transform 0.5s ease;
   user-select: none;
+  position: relative;
 }
 .slider-wrapper.grabbing {
   cursor: grabbing;
@@ -523,7 +500,13 @@ p {
   display: flex;
   width: 100%;
   margin-bottom: 30px;
+  margin-bottom: 30px;
   overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
+}
+.image-list::-webkit-scrollbar {
+  display: none;
 }
 
 .slide {
@@ -576,6 +559,49 @@ p {
   background-color: white;
 }
 
+.scrollbar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.scrollbar-track {
+  flex-grow: 1;
+  height: 4px;
+  background-color: #e0e0e0;
+  position: relative;
+  margin-right: 40px;
+}
+
+.scrollbar-thumb {
+  position: absolute;
+  height: 100%;
+  width: 30%;
+  background-color: blue;
+  cursor: pointer;
+}
+
+.scroll-arrows {
+  display: flex;
+}
+
+.scroll-arrow {
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: blue;
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/*რეკლამის გასტილვა*/
 .caption h3 {
   margin: 10px 0;
   font-size: 1.5em;
@@ -928,19 +954,20 @@ nav .a2 {
   .footer-bottom2 {
     display: block;
   }
+
   .grid-container {
     width: 500px;
     height: 40vh;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch; /* for smooth scrolling on iOS */
+    -webkit-overflow-scrolling: touch;
   }
 
   .grid-item {
     flex: 0 0 80%;
     scroll-snap-align: start;
-    display: block; /* Override if previously flex */
+    display: block;
     width: 100%;
     box-sizing: border-box;
     padding: 10px;
@@ -1055,5 +1082,8 @@ nav .a2 {
   }
   .burger-menu {
     display: flex;
+  }
+  .scroll-arrows {
+    display: none;
   }
 }
