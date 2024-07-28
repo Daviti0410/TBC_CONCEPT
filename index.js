@@ -275,15 +275,15 @@ function checkScreenWidth() {
     }
   } else {
     burgerMenu.style.display = "block";
-    close.style.display = "none"; // Ensure 'close' is hidden when screen width is <= 800
+    close.style.display = "none"; 
     sidebar.style.display = "none";
   }
 }
 
-// Call the function on window resize
+
 window.addEventListener("resize", checkScreenWidth);
 
-// Call the function on initial load
+
 checkScreenWidth();
 
 const faqs = document.querySelectorAll(".faq");
