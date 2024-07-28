@@ -589,6 +589,11 @@ p {
 
 .scroll-arrows {
   display: flex;
+  margin-right: 22px;
+}
+
+.scroll-arrows:hover {
+  color: #c4c8c9;
 }
 
 .scroll-arrow {
@@ -1046,9 +1051,7 @@ section {
   .change-language {
     display: none;
   }
-  .right-links {
-    padding-left: 0;
-  }
+
   .main-footer2 {
     display: block;
   }
